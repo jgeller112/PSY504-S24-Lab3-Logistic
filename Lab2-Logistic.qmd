@@ -21,13 +21,13 @@ format:
 engine: knitr
 ---
 
--   If you are fitting a model, display the model output in a neatly formatted table. (The `gt` `tidy` and `kable` functions can help!). `Modelsummary` also looks good(https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html)
+- If you are fitting a model, display the model output in a neatly formatted table. (The `gt` `tidy` and `kable` functions can help!). `Modelsummary` also looks good(https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html)
 
--   If you are creating a plot, use `ggplot` or `base`and make sure they are publication ready. That means there are clear labels for all axes, titles, etc.
+- If you are creating a plot, use `ggplot` or `base`and make sure they are publication ready. That means there are clear labels for all axes, titles, etc.
 
--   Commit and push your work to GitHub regularly, at least after each exercise. Write short and informative commit messages.
+- Commit and push your work to GitHub regularly, at least after each exercise. Write short and informative commit messages.
 
--   When you're done, we should be able to knit the final version of the QMD in your GitHub as a HTML.
+- When you're done, we should be able to knit the final version of the QMD in your GitHub as a HTML.
 
 ## Data: General Social Survey
 
@@ -62,12 +62,8 @@ The data are in gss2016.csv in the data folder.
 ## EDA
 
 > Let’s begin by making a binary variable for respondents’ views on spending on mass transportation. Create a new variable that is equal to “1” if a respondent said spending on mass transportation is about right and “0” otherwise. Then plot the proportion of the response variable, using informative labels for each category.
->
-> Use your skills to pretty up the plots with descriptive axis labels, perhaps a title, and adjust the colors and other settings in the plot themes. Do yourself proud.
-
 ```{r}
 # load data
-
 ```
 
 ```{r}
@@ -77,12 +73,14 @@ The data are in gss2016.csv in the data folder.
 > Recode `polviews` so it is a factor with levels that are in an order that is consistent with question on the survey. Note how the categories are spelled in the data.
 
 ```{r}
+#recode
 
 ```
 
 > Make a plot of the distribution of `polviews`
 
 ```{r}
+#plot polviews
   
 ```
 
@@ -118,13 +116,14 @@ The data are in gss2016.csv in the data folder.
 
 > Interpret the intercept in the context of the data. Convert the $\beta_0$ parameter out of the log-odds metric to the probability metric. Make sure to include the 95% confidence intervals. Then interpret the results in a sentence or two--what is the basic thing this probability tells us about?
 
--   
+::: callout-note
+## Answer
+:::
 
 > Now let's fit a model using the demographic factors - `age`,`sex`, `sei10` - to predict the odds a person is satisfied with spending on mass transportation. Make any necessary adjustments to the variables so the intercept will have a meaningful interpretation. *Neatly display the model coefficients (do not display the summary output)*
 
 ```{r}
 # fit model
-
 ```
 
 > Consider the relationship between sex and one’s opinion about spending on mass transportation. Interpret the coefficient of sex in terms of the logs odds and OR of being satisfied with spending on mass transportation. What are the predicted probabilities for males and females on support for spending on mass transportation? Please include the 95% CIs around each estimate.
@@ -134,12 +133,19 @@ The data are in gss2016.csv in the data folder.
 
 ```
 
+::: callout-note
+## ANSWER
+:::
+
 > Consider the relationship between age and one’s opinion about spending on mass transportation. Interpret the coefficient of age in terms of the logs odds and OR of being satisfied with spending on mass transportation. Please include the 95% CIs around each estimate.
 
 ```{r}
-#interpret age
 
 ```
+
+::: callout-note
+## ANSWER
+:::
 
 > Consider the relationship between SES and one’s opinion about spending on mass transportation. Interpret the coefficient of SES in terms of the logs odds and OR of being satisfied with spending on mass transportation. Please include the 95% CIs around each estimate.
 
@@ -147,6 +153,10 @@ The data are in gss2016.csv in the data folder.
 #interpret ses
 
 ```
+
+::: callout-note
+## ANSWER
+:::
 
 ## Marginal effects
 
@@ -158,6 +168,10 @@ The data are in gss2016.csv in the data folder.
 
 
 ```
+
+::: callout-note
+## ANSWER
+:::
 
 ## Model comparison
 
@@ -171,6 +185,10 @@ The data are in gss2016.csv in the data folder.
 ```
 
 > Is the model with `polviews` better than the model without?
+
+::: callout-note
+## ANSWER
+:::
 
 ## Visualization
 
@@ -191,13 +209,13 @@ The data are in gss2016.csv in the data folder.
     :::
 
 ```{r}
-#plot
+#plots
 
 ```
 
 ## Model fit
 
-> Calculate the $R^2$ for the final model
+> Calculate the psuedo-$R^2$ for the final model
 
 ```{r}
 
@@ -211,6 +229,10 @@ The data are in gss2016.csv in the data folder.
 
 ```
 
+::: callout-note
+## ANSWER
+:::
+
 ## Assumptions
 
 -   Here I just want to you too look at the assumptions-no need to fix anything
@@ -222,6 +244,10 @@ The data are in gss2016.csv in the data folder.
 
 ```
 
+::: callout-note
+## ANSWER
+:::
+
 > How about outliers?
 
 ```{r}
@@ -230,7 +256,11 @@ The data are in gss2016.csv in the data folder.
 
 ```
 
-> The model fit is not the best. Take a look at the binned residual plots for each continuous predictor variable and look at the linearity. Is there a predictor that sticks out? What can we do to improve model fit in this case?
+::: callout-note
+## ANSWER
+:::
+
+> The model fit is not the best. Take a look at the binned residual plots for each continuous predictor variable and look at linearity. Is there a predictor that sticks out? What can we do to improve model fit in this case?
 
 ::: callout-tip
 If you run the `binned_residuals` function from `easystats` it will print out a message letting you know :). You can plot the binned residuals for each predictor by using `binned_residuals(model, term="predictor") %>% plot(show_dots=TRUE)`
@@ -239,6 +269,10 @@ If you run the `binned_residuals` function from `easystats` it will print out a 
 ```{r}
 
 ```
+
+::: callout-note
+## ANSWER
+:::
 
 ## Reporting
 
